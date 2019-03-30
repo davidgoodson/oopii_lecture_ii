@@ -77,4 +77,8 @@ public class Parent {
         return current_year - this.yob;
     }
     
+    public int getNumberOfChildren(){
+        return this.children.size();
+    }
+    
 }
