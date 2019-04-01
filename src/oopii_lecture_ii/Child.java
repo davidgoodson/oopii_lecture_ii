@@ -6,6 +6,7 @@
 package oopii_lecture_ii;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  *
@@ -23,6 +24,35 @@ public class Child extends Parent{
         this.nationality = nationality;
         this.yob = yob;
         this.addLocation(location);
+    }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public int getYob() {
+		return yob;
+	}
+
+	public void setYob(int yob) {
+		this.yob = yob;
+	}
+    
+	public int getAge(){
+        int current_year = Calendar.getInstance().get(Calendar.YEAR);
+        return current_year - this.yob;
     }
     
 }
