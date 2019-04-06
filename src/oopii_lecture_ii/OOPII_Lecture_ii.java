@@ -9,6 +9,7 @@ package oopii_lecture_ii;
  *
  * @author davidbuyinza
  */
+import  java.util.Date;
 public class OOPII_Lecture_ii {
 
     /**
@@ -43,7 +44,9 @@ public class OOPII_Lecture_ii {
         parents.get(0).addLocation(loc1);
         parents.get(0).addLocation(loc2);
         parents.get(1).addLocation(loc4);
-        parents.get(1).addLocation(loc1);
+        parents.get(1).addLocation(loc6);
+        parents.get(1).addLocation(loc5);
+        parents.get(0).addLocation(loc3);
         
         Child ch1 = new Child("Carol", "Ugandan", 1999, loc1);
         Child ch2 = new Child("Pius", "Kenyan", 1999, loc3);
@@ -51,12 +54,11 @@ public class OOPII_Lecture_ii {
         Child ch4 = new Child("Sebastian", "Congolese", 2000, loc6);
         Child ch5 = new Child("Deborah", "Nigerian", 1999, loc5);
         
-        p1.addChild(ch1);
-        p1.addChild(ch2);
-        p1.addChild(ch5);
+        parents.get(0).addChild(ch1);
+        parents.get(1).addChild(ch2);
+       parents.get(0).addChild(ch3);
         
-        p2.addChild(ch1);
-        p2.addChild(ch3);
+       
         
      
         System.out.println("PROGRAM OUTPUT \n ---------------------- \n");
@@ -70,15 +72,36 @@ public class OOPII_Lecture_ii {
             System.out.println("\tYear of Birth: " + parents.get(n).getYob());
             System.out.println("\tAge: " + parents.get(n).getAge());
             System.out.println("\t\tLocation Details\n\t\t--------------------");
-            for(int i = 0; i < p1.getLocations().size(); i++){
+            for(int i = 0; i < parents.get(n).getLocations().size(); i++){
                 System.out.println("\t\tLocation " + (i + 1));
                 System.out.println("\t\t\tCountry: " + parents.get(n).getLocations().get(i).getCountry());
                 System.out.println("\t\t\tDistrict: " + parents.get(n).getLocations().get(i).getDistrict());
                 System.out.println("\t\t\tCounty: " + parents.get(n).getLocations().get(i).getCounty());
                 System.out.println("\t\t\tParish: " + parents.get(n).getLocations().get(i).getParish());
                 System.out.println("\t\t\tVillage: " + parents.get(n).getLocations().get(i).getVillage());
-
-            } 
+                
+              } 
+            for(int u=0;u<parents.get(n).getNumberofchildren();u++){
+                System.out.println("\t\tchild"+(1+u));
+               System.out.println("\t\t\tName; "+parents.get(n).getChildren().get(u).getName());
+               System.out.println("\t\t\tNationality; "+parents.get(n).getChildren().get(u).getNationality());
+               System.out.println("\t\t\tyear of birth; "+parents.get(n).getChildren().get(u).getYob());
+               System.out.println("\t\t\tAge; "+parents.get(n).getChildren().get(u).getAge());
+            
+             for(int t=0;t<parents.get(n).getChildren().get(u).getLocations().size();t++){
+             System.out.println("\t\tlocation; "+(1+t));
+             System.out.println("\t\t\tCountry; "+parents.get(n).getChildren().get(u).getLocations().get(t).getCountry());
+            System.out.println("\t\t\tDistrict: " + parents.get(n).getChildren().get(u).getLocations().get(t).getDistrict());
+            System.out.println("\t\t\tCounty: " + parents.get(n).getChildren().get(u).getLocations().get(t).getCounty());
+            System.out.println("\t\t\tParish: " + parents.get(n).getChildren().get(u).getLocations().get(t).getParish());
+            System.out.println("\t\t\tVillage: " + parents.get(n).getChildren().get(u).getLocations().get(t).getVillage());
+             }  
+               
+               
+               
+               
+               
+            }
         }
     
     }
