@@ -24,7 +24,7 @@ public class Parent {
         this.name = name;
         this.nationality = nationality;
         this.yob = yob;
-        addLocation(location);
+        this.locations=locations;
         this.children = children;
     }
 
@@ -72,13 +72,12 @@ public class Parent {
         return children;
     }
     
-    public int getAge(){
-        int current_year = Calendar.getInstance().get(Calendar.YEAR);
-        return current_year - this.yob;
-    }
-    
-    public int getNumberOfChildren(){
-        return this.children.size();
-    }
+   public  int getAge(){
+    int current_year=Calendar.getInstance().get(Calendar.YEAR);
+    return current_year -this.yob;
+   }
+   public int getNumberofchildren(){
+     return this.children.size();
+   }
     
 }
